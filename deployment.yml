@@ -1,22 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-   name: accuknox-kub
-   namespace: default
+   name: wisecow-deployment
 spec:
    replicas: 1
    selector:
       matchLabels:
-         app: accuknoxpra
+         app: wisecow
    template:
-      metadata:
-         labels:
-            app: accuknoxpra
-
       spec:
          containers:
-            - name: accuknox-cont
-              image: accuknox:latest
-              imagePullPolicy: Never
+            - name: wisecow
+              image: wisecow:latest
               ports:
                 - containerPort: 4499
